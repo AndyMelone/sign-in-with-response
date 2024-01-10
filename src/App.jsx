@@ -5,7 +5,7 @@ export default function App() {
         <div>
           <img
             className="imgHiden"
-            src="../src/assets/images/illustration-sign-up-mobile.svg"
+            src="/images/illustration-sign-up-mobile.svg"
             alt=""
           />
         </div>
@@ -14,21 +14,15 @@ export default function App() {
           <p> Join 60,000+ product managers receiving monthly updates on:</p>
           <ul>
             <li>
-              <samp>
-                <img src="../src/assets/images/icon-list.svg" alt="" />
-              </samp>
+              <img src="/images/icon-list.svg" alt="" />
               Product discovery and building what matters
             </li>
             <li>
-              <samp>
-                <img src="../src/assets/images/icon-list.svg" alt="" />
-              </samp>
+              <img src="/images/icon-list.svg" alt="" />
               Measuring to ensure updates are a success
             </li>
             <li>
-              <samp>
-                <img src="../src/assets/images/icon-list.svg" alt="" />
-              </samp>
+              <img src="/images/icon-list.svg" alt="" />
               And much more!
             </li>
           </ul>
@@ -47,10 +41,7 @@ export default function App() {
           </div>
         </div>
         <div className="content-right">
-          <img
-            src="../src/assets/images/illustration-sign-up-desktop.svg"
-            alt=""
-          />
+          <img src="/images/illustration-sign-up-desktop.svg" alt="" />
         </div>
       </div>
     </div>
