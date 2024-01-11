@@ -7,6 +7,10 @@
 }
 body {
   background-color: hsl(234, 29%, 20%);
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .content {
@@ -15,11 +19,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 5px;
+  padding: 24px;
 }
 
 .app {
   display: flex;
-
   border-radius: 1em;
   padding: 1%;
   background-color: hsl(0, 0%, 100%);
@@ -37,7 +42,7 @@ body {
 
     p {
       font-size: large;
-      width: 90%;
+
       margin: 0 auto;
     }
 
@@ -76,7 +81,7 @@ body {
 
       .inputText,
       .inputButton {
-        width: 90%;
+        width: 100%;
         height: 40px;
         border-radius: 5px;
         padding: 0 20px;
@@ -108,9 +113,55 @@ body {
   }
 }
 
-@media (max-width: 375px) {
+.response {
+  width: 450px;
+  padding: 40px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 53px;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  strong {
+    color: #1e3a8a;
+  }
+
+  input[type="button"] {
+    width: 100%;
+    height: 40px;
+    font-weight: bolder;
+    color: hsl(0, 0%, 100%);
+    background: linear-gradient(to right, hsl(4, 100%, 67%), #ff8c57);
+    border: none;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 681px) {
+  body {
+    background-color: #ffffff;
+    padding: auto;
+    height: 100vh;
+  }
+
   .content {
     height: 100%;
+    margin: 0;
   }
   .app {
     display: flex;
@@ -123,6 +174,7 @@ body {
 
     .imgHiden {
       display: flex;
+      margin: 0 auto;
     }
 
     .content-left {
@@ -167,5 +219,9 @@ body {
     .content-right {
       display: none;
     }
+  }
+
+  .response {
+    width: 100%;
   }
 }
