@@ -16,7 +16,9 @@ export default function Response() {
         value="Dismiss message"
         className="resInput"
         onClick={() => {
-          toast.loading("please wait");
+          toast.loading("please wait", {
+            duration: 1800,
+          });
         }}
       />
     </div>
