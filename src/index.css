@@ -13,12 +13,6 @@ body {
   justify-content: center;
 }
 
-.error {
-  border: hsl(4, 100%, 67%);
-  background-color: hsl(4, 100%, 67%);
-  color: hsl(4, 100%, 67%);
-}
-
 .content {
   display: flex;
   gap: 20px;
@@ -86,12 +80,27 @@ body {
       }
 
       .inputText,
-      .inputButton {
+      .inputButton,
+      .error {
         width: 100%;
         height: 40px;
         border-radius: 5px;
         padding: 0 20px;
+      }
+
+      .inputText,
+      .inputButton {
         border: 1px solid hsl(231, 7%, 60%);
+      }
+
+      .error {
+        outline: 1px solid hsl(4, 100%, 67%);
+        border: none;
+        background-color: #ffe8e6;
+        color: hsl(4, 100%, 67%);
+      }
+      .error::placeholder {
+        color: hsl(4, 100%, 67%);
       }
 
       .inputButton {
@@ -100,16 +109,37 @@ body {
         padding: 0;
         margin-top: 20px;
         border: none;
-        cursor: grabbing;
+
+        cursor: pointer;
       }
 
-      .inputText:focus,
-      .inputButton:focus {
+      .inputButton:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .inputText:focus {
         outline: 1px solid hsl(235, 18%, 26%);
+        background-color: hsl(0, 0%, 100%);
+      }
+      .error:focus {
+        outline: 1px solid hsl(4, 100%, 67%);
+      }
+
+      .inputButton:hover {
+        background: linear-gradient(
+          to right,
+          #ff5571,
+          hsl(4, 100%, 67%),
+          #ff6742
+        );
+        opacity: 0.7;
+        box-shadow: 0 10px 10px rgba(241, 105, 64, 0.833);
+        color: hsl(0, 0%, 100%);
       }
 
       .inputButton:active {
-        opacity: 0.7;
+        opacity: 1;
       }
     }
   }
@@ -148,19 +178,26 @@ body {
     color: #1e3a8a;
   }
 
-  input[type="button"] {
+  .resInput[type="button"] {
     width: 100%;
     height: 40px;
     font-weight: bolder;
+    background-color: hsl(234, 29%, 20%);
     color: hsl(0, 0%, 100%);
-    background: linear-gradient(to right, hsl(4, 100%, 67%), #ff8c57);
     border: none;
     margin: 20px 0;
     border-radius: 5px;
-    cursor: grab;
+
+    cursor: pointer;
   }
-  input[type="button"]:active {
-    opacity: 0.9;
+  .resInput[type="button"]:active {
+    border: 1px sold #ff5571;
+  }
+  .resInput[type="button"]:hover {
+    background: linear-gradient(to right, #ff5571, hsl(4, 100%, 67%), #ff6742);
+    opacity: 0.7;
+    box-shadow: 0 10px 10px rgba(241, 105, 64, 0.833);
+    color: hsl(0, 0%, 100%);
   }
 }
 

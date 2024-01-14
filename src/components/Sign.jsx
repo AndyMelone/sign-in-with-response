@@ -6,18 +6,27 @@ export default function Sign() {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   const handleChange = (e) => {
     setText(e.target.value);
   };
 
-  function redirection() {
-    if (text == "") {
+  const validate = emailRegex.test(text);
+
+  function redirection(e) {
+    e.preventDefault();
+
+    if (!validate) {
+      setError(true);
       toast.error("une erreur est survenue");
-    } else {
+    }
+    if (emailRegex.test(text)) {
       navigate("/response");
     }
   }
-  console.log(text);
+  console.log(validate);
+
   return (
     <div className="content">
       <div className="app">
@@ -52,20 +61,34 @@ export default function Sign() {
               And much more!
             </li>
           </ul>
-          <form action="">
+          <form onSubmit={(e) => redirection(e)}>
             {" "}
             <div className="divForInput">
-              <label htmlFor="email">Email address</label>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label htmlFor="email">Email address</label>
+                {error && (
+                  <strong
+                    style={{
+                      color: "hsl(4, 100%, 67%)",
+                    }}
+                  >
+                    Valid email required
+                  </strong>
+                )}
+              </div>
               <input
-                className="inputText"
+                className={`inputText ${error ? "error" : ""}`}
                 type="text"
                 placeholder="email@company.com"
-                required
                 value={text}
                 onChange={(e) => handleChange(e)}
               />
               <input
-                onClick={() => redirection()}
                 className="inputButton"
                 type="submit"
                 value="Subscribe to monthly newsletter"

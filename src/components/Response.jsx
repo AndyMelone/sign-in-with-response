@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 export default function Response() {
   return (
     <div className="response">
@@ -9,7 +11,14 @@ export default function Response() {
         button inside to connfirme your subscription
       </p>
 
-      <input type="button" value="Dismiss message" />
+      <input
+        type="button"
+        value="Dismiss message"
+        className="resInput"
+        onClick={() => {
+          toast.loading("please wait");
+        }}
+      />
     </div>
   );
 }
