@@ -72,7 +72,7 @@ export default function Sign() {
               >
                 <label
                   style={{
-                    padding: "24px 0 28px 0px ",
+                    padding: "24px 0 16px 0px ",
                   }}
                   htmlFor="email"
                 >
