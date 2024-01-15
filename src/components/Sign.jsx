@@ -70,7 +70,14 @@ export default function Sign() {
                   justifyContent: "space-between",
                 }}
               >
-                <label htmlFor="email">Email address</label>
+                <label
+                  style={{
+                    padding: "24px 0 28px 0px ",
+                  }}
+                  htmlFor="email"
+                >
+                  Email address
+                </label>
                 {error && (
                   <strong
                     style={{
